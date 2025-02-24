@@ -12,8 +12,8 @@ node {
             input message: "Lanjutkan ke tahap Deploy?"
         }
         stage('Deploy') {
-            sleep time: 1, unit: 'MINUTES'
             sh './jenkins/scripts/deliver.sh'
+            sleep time: 1, unit: 'MINUTES'
             input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)'
             sh './jenkins/scripts/kill.sh'
         }
